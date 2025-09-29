@@ -1,22 +1,36 @@
 html, body { height: 100%; margin: 0; padding: 0; font-family: Arial, sans-serif}
-header, footer {
+footer {
     text-align: center;
-    background-color:rgb(196, 196, 196);
+    background-color:rgb(235, 235, 235);
     padding: 20px;
-    margin-top: 20px;
+    grid-area: footer;
 }
-.left { 
-    width: 70%;
-    background-color: rgb(87, 209, 87);
-    height: 500px;
-}
-.right {
-    width: 25%;
-    background-color: rgb(253, 253, 111);
-    height: 500px;
-    padding-right: 20px;
-    margin-right: 20px;
+header {
+    text-align: center;
+    background-color:rgb(235, 235, 235);
+    padding: 20px;
+    grid-area: header;
 }
 .container {
-
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header header" "left left right" "footer footer footer";
+}
+.left {
+    grid-area: left;
+    padding: 20px;
+    margin-left: 25px;
+}
+.right {
+    grid-area: right;
+    padding: 20px;
+    margin-right: 25px;
+}
+article {
+    grid-template-columns: 3fr 1fr;
+    padding: 10px;
+}
+img {
+    max-width: 75%;
+    height: auto;
 }
